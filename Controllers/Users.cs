@@ -22,5 +22,11 @@ namespace DatingWebAppScratch.Controllers
         {
             return  await _dbContext.Users.FindAsync(id);
         }
+
+        [HttpGet]
+        public List<AppUser> Get()
+        {
+            return _dbContext.Users.ToList();
+        }
     }
 }
