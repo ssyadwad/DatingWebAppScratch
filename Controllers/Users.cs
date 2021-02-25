@@ -24,6 +24,10 @@ namespace DatingWebAppScratch.Controllers
             return  await _dbContext.Users.FindAsync(id);
         }
        
+        /// <summary>
+        /// Added Authorization Bearer token Code
+        /// </summary>
+        /// <returns></returns>
         [Authorize]
         [HttpGet]
         public List<AppUser> Get()
