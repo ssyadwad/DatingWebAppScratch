@@ -25,7 +25,7 @@ namespace DatingWebAppScratch.Controllers
         }
        
         /// <summary>
-        /// Added Authorization Bearer token Code
+        /// Added Authorization Bearer token Codes
         /// </summary>
         /// <returns></returns>
         [Authorize]
