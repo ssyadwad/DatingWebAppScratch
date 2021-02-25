@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using DatingWebAppScratch.Contracts;
 using DatingWebAppScratch.Data;
 using DatingWebAppScratch.Models;
 using DatingWebAppScratch.ViewModel;
@@ -17,17 +18,19 @@ namespace DatingWebAppScratch.Controllers
     public class AccountController : ControllerBase
     {
         private AppDbContext dbContext;
+        private ITokenService _tokenService;
         private int iterationCount = 10000;
         private const int _saltSize = 128;
         private const int _hashSize = 128;
-        public AccountController(AppDbContext dbContext)
+        public AccountController(AppDbContext dbContext,ITokenService tokenService)
         {
             this.dbContext = dbContext;
+            _tokenService = tokenService;
         }
 
 
         [HttpPost("Login")]
-        public async Task<ActionResult<AppUser>> Login([FromBody]LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login([FromBody]LoginDto loginDto)
         {
             try
             {
@@ -43,7 +46,7 @@ namespace DatingWebAppScratch.Controllers
                         {
                             if (VerifyPassword(user, loginDto.Password))
                             {
-
+                              return   new UserDto() {token= _tokenService.CreateTokenService(user) ,UserName=user.UserName};
                             }
                             else
                             {
@@ -52,11 +55,12 @@ namespace DatingWebAppScratch.Controllers
                         }
                     }
                 }
+                return BadRequest("Invalid request!");
                 
             }
             catch(Exception ex)
             {
-
+                return BadRequest("Invalid request!");
             }
         }
         [HttpPost("Register")]
@@ -140,13 +144,21 @@ namespace DatingWebAppScratch.Controllers
                 salt = user.PasswordSalt;
 
                 var rfc2898DeriveBytes = new Rfc2898DeriveBytes(Password, salt, iterationCount);
-                if (rfc2898DeriveBytes.GetBytes(_hashSize) == password) return true;
-                return false;
+                return SlowEquals(user.Password, rfc2898DeriveBytes.GetBytes(_hashSize));
             }
             catch (Exception)
             {
                 return false;
             }
+        }
+        private static bool SlowEquals(byte[] a, byte[] b)
+        {
+            var diff = (uint)a.Length ^ (uint)b.Length;
+            for (int i = 0; i < a.Length && i < b.Length; i++)
+            {
+                diff |= (uint)(a[i] ^ b[i]);
+            }
+            return diff == 0;
         }
 
     }

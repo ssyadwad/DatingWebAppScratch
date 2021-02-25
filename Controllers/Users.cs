@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DatingWebAppScratch.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DatingWebAppScratch.Controllers
 {
@@ -16,13 +17,14 @@ namespace DatingWebAppScratch.Controllers
         {
             _dbContext = dbContext;
         }
-
+        
         [HttpGet("{id}")]
         public async Task<AppUser> GetUsers(int id)
         {
             return  await _dbContext.Users.FindAsync(id);
         }
-
+       
+        [Authorize]
         [HttpGet]
         public List<AppUser> Get()
         {
