@@ -21,6 +21,14 @@ namespace DatingWebAppScratch.Services
             _config = config;
             _key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_config["Jwt:Key"]));
         }
+        /// <summary>
+        /// 1. Create a claim
+        /// 2. Create Signing credentials
+        /// 3. Create a token discreptor
+        /// and then write it to handler
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         string ITokenService.CreateTokenService(AppUser user)
         {
             var claims = new List<Claim>()

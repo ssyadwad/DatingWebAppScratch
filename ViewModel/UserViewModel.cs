@@ -10,10 +10,10 @@ namespace DatingWebAppScratch.ViewModel
     {
         [Required]
         [StringLength(50, ErrorMessage = "UserName is not appropriate", MinimumLength = 1)]
-        public string UserName { get; set; }
+        public string userName { get; set; }
 
         [Required]
         [StringLength(10, ErrorMessage = "You must specify password of 10 characters")]
-        public string Password { get; set; }
+        public string password { get; set; }
     }
 }

@@ -69,23 +69,23 @@ namespace DatingWebAppScratch.Controllers
             AppUser user = null;
             try
             {
-                if (await UserExistsAsync(userViewModel.UserName))
+                if (await UserExistsAsync(userViewModel.userName))
                 {
                     return BadRequest("User Already exists");
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(userViewModel.UserName) || string.IsNullOrEmpty(userViewModel.Password))
+                    if (string.IsNullOrEmpty(userViewModel.userName) || string.IsNullOrEmpty(userViewModel.password))
                     {
                         return BadRequest("One of the field is empty!!");
                     }
                     else
                     {
-                        GetPasswordHash(userViewModel.Password, out PasswordHashSalt passwordHashSalt);
+                        GetPasswordHash(userViewModel.password, out PasswordHashSalt passwordHashSalt);
 
                         user = new AppUser()
                         {
-                            UserName = userViewModel.UserName,
+                            UserName = userViewModel.userName,
                             Password = passwordHashSalt.password,
                             PasswordSalt = passwordHashSalt.passwordSalt
                         };

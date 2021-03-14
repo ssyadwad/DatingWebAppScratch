@@ -31,6 +31,12 @@ namespace DatingWebAppScratch
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// 1. Add Authentication is an important method to validate the Jwt bearer toekn.
+        /// 2. JwtBearerDefaults is necessary to provide the Authentication scheme for JWT Bearer token validation.
+        /// 3. Get the key from the Configuration section
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             string connectionName = Configuration["ConnectionStrings:DefaultConnection"];

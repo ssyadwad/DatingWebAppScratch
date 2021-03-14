@@ -28,7 +28,6 @@ namespace DatingWebAppScratch.Controllers
         /// Added Authorization Bearer token Codes
         /// </summary>
         /// <returns></returns>
-        [Authorize]
         [HttpGet]
         public List<AppUser> Get()
         {
