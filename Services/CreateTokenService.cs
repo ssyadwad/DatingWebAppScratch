@@ -24,7 +24,7 @@ namespace DatingWebAppScratch.Services
         /// <summary>
         /// 1. Create a claim
         /// 2. Create Signing credentials
-        /// 3. Create a token discreptor
+        /// 3. Create a token discreptors
         /// and then write it to handler
         /// </summary>
         /// <param name="user"></param>
