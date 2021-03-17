@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace DatingWebAppScratch.ViewModel
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class UserDto
     {
         public string UserName { get; set; }
