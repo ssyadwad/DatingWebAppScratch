@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace DatingWebAppScratch.ViewModel
 {
     /// <summary>
-    /// 
+    /// User View Model UserDto
     /// </summary>
     public class UserDto
     {
