@@ -1,0 +1,15 @@
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.dll
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\NUnit3.TestAdapter.pdb
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\nunit.engine.netstandard.dll
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\Mono.Cecil.dll
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\UnitTestProject.deps.json
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\UnitTestProject.runtimeconfig.json
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\UnitTestProject.runtimeconfig.dev.json
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\UnitTestProject.dll
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\bin\Debug\netcoreapp2.1\UnitTestProject.pdb
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.csproj.CoreCompileInputs.cache
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.AssemblyInfoInputs.cache
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.AssemblyInfo.cs
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.dll
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.pdb
+D:\AspNetCore\DatingWebAppScratch\UnitTestProject\obj\Debug\netcoreapp2.1\UnitTestProject.csprojAssemblyReference.cache
