@@ -10,14 +10,14 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '64438db9-965a-4ba7-8a92-d60796ab3786'
+  dockerRegistryServiceConnection: 'c9cd2683-7b26-4ab9-a64f-eaa894c138c1'
   imageRepository: 'ssyadwaddatingwebappscratch'
   containerRegistry: 'desigoccacrssy.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/DatingWebAppScratch/Dockerfile'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  vmImageName: 'windows-latest'
 
 stages:
 - stage: Build
@@ -37,8 +37,3 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-    - task: PublishBuildArtifacts@1
-      inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
