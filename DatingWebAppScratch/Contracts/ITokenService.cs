@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace DatingWebAppScratch.Contracts
 {
     /// <summary>
-    /// This is an ITokenService
+    /// Security Service
+    /// This is an ITokenService rest
     /// </summary>
     public interface ITokenService
     {
