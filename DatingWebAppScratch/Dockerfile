@@ -37,5 +37,7 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443 
 COPY --from=build-env /app .
 ENTRYPOINT ["dotnet", "DatingWebAppScratch.dll"]
