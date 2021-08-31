@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'c9cd2683-7b26-4ab9-a64f-eaa894c138c1'
+  dockerRegistryServiceConnection: '3b9963bc-f86d-45e2-9d21-23d45085af7f'
   imageRepository: 'ssyadwaddatingwebappscratch'
-  containerRegistry: 'desigoccacrssy.azurecr.io'
+  containerRegistry: 'ssyadwaddatingwebappscratch.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/DatingWebAppScratch/Dockerfile'
   tag: '$(Build.BuildId)'
 
