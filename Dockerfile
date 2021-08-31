@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1 AS build
 WORKDIR /src
-COPY ["DatingWebAppScratch.csproj", "DatingWebAppScratch/"]
+COPY ["DatingWebAppScratch/DatingWebAppScratch.csproj", "DatingWebAppScratch/"]
 RUN dotnet restore "DatingWebAppScratch/DatingWebAppScratch.csproj"
 WORKDIR "/src/DatingWebAppScratch"
 COPY . .
