@@ -14,7 +14,7 @@ variables:
   imageRepository: 'ssyadwaddatingwebappscratch'
   containerRegistry: 'ssyadwaddatingwebappscratch.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/DatingWebAppScratch/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 'latest'
 
   # Agent VM image name
   vmImageName: 'windows-latest'
@@ -26,7 +26,8 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: $(vmImageName)
+      name: 'Default'
+      vmImage: 'agentVM'
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
