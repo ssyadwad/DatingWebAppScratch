@@ -24,8 +24,7 @@
 #ENTRYPOINT ["dotnet", "DatingWebAppScratch.dll"]
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build-env
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443 
+
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
 RUN dotnet restore
@@ -38,4 +37,6 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
 WORKDIR /app
 COPY --from=build-env /app .
+EXPOSE 80
+EXPOSE 443
 ENTRYPOINT ["dotnet", "DatingWebAppScratch.dll"]
