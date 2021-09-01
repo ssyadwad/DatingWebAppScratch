@@ -14,7 +14,7 @@ namespace DatingWebAppScratch.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2", "value3", "value41" };
+            return new string[] { "Release Pipeline succeeded!!!" };
         }
 
         // GET api/values/5
